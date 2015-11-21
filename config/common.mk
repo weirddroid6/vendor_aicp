@@ -260,6 +260,12 @@ DEVICE_PACKAGE_OVERLAYS += vendor/aicp/overlay/common
 # AICP Versioning
 -include vendor/aicp/config/version.mk
 
+# AICP OTA
+ifneq ($(AICP_BUILDTYPE),UNOFFICIAL)
+PRODUCT_PACKAGES +=  \
+   AICP_OTA_Updater
+endif
+
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/aicp/config/partner_gms.mk
 
