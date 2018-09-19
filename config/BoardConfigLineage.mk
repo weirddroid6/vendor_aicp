@@ -4,5 +4,5 @@ ifeq ($(WITH_LINEAGE_CHARGER),true)
 endif
 
 ifeq ($(BOARD_USES_QCOM_HARDWARE),true)
-include vendor/lineage/config/BoardConfigQcom.mk
+include vendor/aicp/config/BoardConfigQcom.mk
 endif
