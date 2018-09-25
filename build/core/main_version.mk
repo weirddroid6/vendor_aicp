@@ -1,14 +1,21 @@
-# LineageOS System Version
+# AICP System Version
 ADDITIONAL_BUILD_PROPERTIES += \
-    ro.lineage.version=$(LINEAGE_VERSION) \
-    ro.lineage.releasetype=$(AICP_BUILDTYPE) \
-    ro.lineage.build.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR) \
-    ro.modversion=$(LINEAGE_VERSION) \
-    ro.lineagelegal.url=https://lineageos.org/legal
+    ro.modversion=$(VERSION)-$(AICP_BUILDTYPE) \
+    ro.aicp.releasetype=$(AICP_BUILDTYPE) \
+    ro.aicp.version=$(VERSION)-$(AICP_BUILDTYPE) \
+    ro.aicp.build.version=$(VERSION) \
+    ro.aicp.display.version=$(AICP_VERSION)
 
-# LineageOS Platform Display Version
+# needed for statistics
 ADDITIONAL_BUILD_PROPERTIES += \
-    ro.lineage.display.version=$(LINEAGE_DISPLAY_VERSION)
+    ro.aicp.branch=$(AICP_BRANCH) \
+    ro.romstats.url=http://stats.aicp-rom.com/ \
+    ro.romstats.name=AICP \
+    ro.romstats.buildtype=$(AICP_BUILDTYPE) \
+    ro.romstats.version=$(VERSION) \
+    ro.romstats.tframe=1 \
+    ro.romstats.askfirst=1 \
+    ro.romstats.ga=UA-48128535-2
 
 # LineageOS Platform SDK Version
 ADDITIONAL_BUILD_PROPERTIES += \
