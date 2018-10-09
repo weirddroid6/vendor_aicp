@@ -155,6 +155,10 @@ PRODUCT_PACKAGES += \
     WallpaperPicker \
     WeatherProvider
 
+# Custom AICP packages
+PRODUCT_PACKAGES += \
+    AicpExtras
+
 # Exchange support
 PRODUCT_PACKAGES += \
     Exchange2
