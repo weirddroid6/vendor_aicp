@@ -3,6 +3,7 @@ ADDITIONAL_BUILD_PROPERTIES += \
     ro.modversion=$(VERSION)-$(AICP_BUILDTYPE) \
     ro.aicp.releasetype=$(AICP_BUILDTYPE) \
     ro.aicp.version=$(VERSION)-$(AICP_BUILDTYPE) \
+    ro.aicp.version.update=$(AICP_BRANCH)-$(VERSION) \
     ro.aicp.build.version=$(VERSION) \
     ro.aicp.display.version=$(AICP_VERSION)
 
