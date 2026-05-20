@@ -224,6 +224,10 @@ def add_to_manifest(repositories):
 
 def fetch_dependencies(repo_path):
     print(f'Looking for dependencies in {repo_path}')
+
+    if first_dependency:
+        os.system('vendor/aicp/build/tools/roomcleaner.py %s' % repo_path)
+
     dependencies_path = repo_path + '/aicp.dependencies'
     syncable_repos = []
     verify_repos = []
@@ -265,7 +269,7 @@ def fetch_dependencies(repo_path):
             subprocess.run(['repo', 'sync', '--force-sync'] + syncable_repos)
 
     for deprepo in verify_repos:
-        fetch_dependencies(deprepo)
+        fetch_dependencies(deprepo,True)
 
 
 def get_default_or_fallback_revision(repo_name):
@@ -349,7 +353,7 @@ else:
             subprocess.run(['repo', 'sync', '--force-sync', repo_path])
             print('Repository synced!')
 
-            fetch_dependencies(repo_path)
+            fetch_dependencies(repo_path, True)
             print('Done')
             sys.exit()
 
